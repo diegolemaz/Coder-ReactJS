@@ -1,18 +1,26 @@
-import carrIm from "../assets/carrito.png"
-export const NavBar = ( ) => {
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import CartWidget from "./CartWidget";
 
+const NavBar = () => {
+  return (
     <header>
-        <nav>
-            <img src={carrIm} alt="Carrito" /> 
-           <h6>M@RKET</h6> 
-          <ul>
-            <li>
-                <a href= "*">INICIO</a>
-                <a href= "*">PRODUCTOS</a>
-                <a href= "*">CARRITO</a>
-                <a href= "*">ACERCA DE NOSOTROS</a>
-            </li>
-            </ul>  
-        </nav>
+      <nav>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home" className="align-middle">M@RKET</Navbar.Brand>
+            <Nav className="me-auto mx-auto">
+              <Nav.Link href="#products">Productos</Nav.Link>
+              <Nav.Link href="#aboutUs">Acerca de Nosotros</Nav.Link>
+              <Nav.Link href="#contact">Contacto</Nav.Link>
+              <Nav.Link href="#cart"><CartWidget /></Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+      </nav>
     </header>
-   }
+  );
+};
+
+export default NavBar;
